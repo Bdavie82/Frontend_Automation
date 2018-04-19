@@ -1,7 +1,5 @@
 package WebsiteAutomation.LogicObjects;
 
-import WebsiteAutomation.PageObjects.HomepagePO;
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
 
