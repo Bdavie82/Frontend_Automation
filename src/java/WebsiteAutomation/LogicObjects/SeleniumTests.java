@@ -1,15 +1,19 @@
 package WebsiteAutomation.LogicObjects;
 
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 
 public class SeleniumTests extends BaseTest {
 
     @Test
-    public void GetTitle()
+    @Parameters ({"website"})
+    public void GetTitle(String website)
     {
-        HomepagePO.NavigatetoSite("https://www.skiutah.com/");
+
+        HomepagePO.NavigatetoSite(website);
         HomepagePO.FindTitle();
+        
     }
 
 

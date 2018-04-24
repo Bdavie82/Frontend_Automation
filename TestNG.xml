@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Frontend_Automation" thread-count="1">
+    <parameter name="website" value="http://skiutah.com"/>
+    <test name="SeleniumTests">
+        <parameter name="website" value="https://skiutah.com"/>
+        <classes>
+            <class name="WebsiteAutomation.LogicObjects.SeleniumTests">
+
+            </class>
+        </classes>
+    </test>
+</suite>
