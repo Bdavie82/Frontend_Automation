@@ -5,7 +5,7 @@
     <test name="SeleniumTests">
         <parameter name="website" value="https://skiutah.com"/>
         <classes>
-            <class name="WebsiteAutomation.LogicObjects.SeleniumTests">
+            <class name="LogicObjects.SeleniumTests">
 
             </class>
         </classes>

@@ -1,4 +1,4 @@
-package WebsiteAutomation.LogicObjects;
+package LogicObjects;
 
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -11,7 +11,7 @@ public class SeleniumTests extends BaseTest {
     public void GetTitle(String website)
     {
 
-        HomepagePO.NavigatetoSite(website);
+        HomepagePO.NavigateToSite(website);
         HomepagePO.FindTitle();
         
     }

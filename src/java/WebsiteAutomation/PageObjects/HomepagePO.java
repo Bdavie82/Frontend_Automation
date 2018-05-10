@@ -1,4 +1,4 @@
-package WebsiteAutomation.PageObjects;
+package PageObjects;
 
 import org.openqa.selenium.WebDriver;
 
@@ -10,7 +10,7 @@ public class HomepagePO {
         _webDriver = webDriver;
     }
 
-    public void NavigatetoSite(String WebSite)
+    public void NavigateToSite(String WebSite)
     {
 
         _webDriver.get(WebSite);

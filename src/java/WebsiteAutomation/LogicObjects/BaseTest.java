@@ -1,6 +1,6 @@
-package WebsiteAutomation.LogicObjects;
+package LogicObjects;
 
-import WebsiteAutomation.PageObjects.HomepagePO;
+import PageObjects.HomepagePO;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
