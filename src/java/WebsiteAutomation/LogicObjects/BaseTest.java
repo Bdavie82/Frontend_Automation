@@ -9,7 +9,7 @@ import org.testng.annotations.BeforeTest;
 
 public class BaseTest {
 
-    WebDriver _webDriver;
+    protected WebDriver _webDriver;
 
     protected HomepagePO HomepagePO;
 
@@ -38,7 +38,7 @@ public class BaseTest {
         if(_webDriver != null){
             System.out.println("Closing chrome browser");
 
-            _webDriver.quit();
+           // _webDriver.quit();
         }
     }
 }
