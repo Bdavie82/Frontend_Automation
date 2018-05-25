@@ -5,7 +5,7 @@
     <parameter name="navigateTo" value="Deals"/>
     <test name="SeleniumTests">
         <parameter name="website" value="https://skiutah.com"/>
-        <parameter name="navigateTo" value="DEALS"/>
+        <parameter name="navigateTo" value="Deals"/>
         <classes>
             <class name="LogicObjects.SeleniumTests">
 

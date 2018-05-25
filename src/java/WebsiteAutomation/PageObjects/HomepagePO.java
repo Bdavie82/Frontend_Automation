@@ -1,6 +1,7 @@
 package PageObjects;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -35,13 +36,17 @@ public class HomepagePO {
     public boolean NavigateToPage(String navigateTo){
 
         try{
-            POHelper.WaitForElement(_webDriver, By.cssSelector(".SuperfishMegaMenu-level--1"));
-            List<WebElement> mainPages = _webDriver.findElements(By.cssSelector(".SuperfishMegaMenu-level--1"));
-            WebElement Page = POHelper.ClickListItem(mainPages,navigateTo);
 
-            //WebElement Page = _webDriver.findElement(By.cssSelector("span[title='Deals']"));
+            POHelper.WaitForElement(_webDriver, By.cssSelector(".SuperfishMegaMenu-level--1 [title~="+navigateTo+"]"));
+            WebElement Page = _webDriver.findElement(By.cssSelector(".SuperfishMegaMenu-level--1 [title~="+navigateTo+"]"));
 
-            Page.click();
+            System.out.println(Page);
+
+            String link = Page.getAttribute("href");
+
+            System.out.println(link);
+            _webDriver.get(link);
+
             return true;
 
         } catch (org.openqa.selenium.NoSuchElementException e){
