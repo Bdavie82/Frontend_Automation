@@ -1,19 +1,19 @@
 package PageObjects;
 
-import LogicObjects.SeleniumTests;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
-import sun.font.TrueTypeFont;
 
-import java.util.List;
+/***
+ * Created by Bryan Davie 5/14/2018
+ * Used as a Page object for Homepage testing
+ */
 
 public class HomepagePO {
 
     private WebDriver _webDriver;
-
+    public String Title;
+    public String link;
     public HomepagePO(WebDriver webDriver){
         _webDriver = webDriver;
     }
@@ -27,12 +27,10 @@ public class HomepagePO {
 
     public Boolean FindTitle(){
 
-        String Title;
+
 
         try {
-             Title = _webDriver.getTitle();
-
-            System.out.println("Page title: "+ Title);
+            Title = _webDriver.getTitle();
 
             return true;
         }
@@ -52,9 +50,8 @@ public class HomepagePO {
             POHelper.WaitForElement(_webDriver, By.cssSelector(".SuperfishMegaMenu-level--1 [title~="+navigateTo+"]"));
             WebElement Page = _webDriver.findElement(By.cssSelector(".SuperfishMegaMenu-level--1 [title~="+navigateTo+"]"));
 
-            String link = Page.getAttribute("href");
+            link = Page.getAttribute("href");
 
-            System.out.println(link);
             _webDriver.get(link);
 
             return true;
