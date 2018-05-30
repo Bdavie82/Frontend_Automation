@@ -1,9 +1,12 @@
 package PageObjects;
 
+import LogicObjects.SeleniumTests;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+import sun.font.TrueTypeFont;
 
 import java.util.List;
 
@@ -22,15 +25,24 @@ public class HomepagePO {
 
 
 
-    public String FindTitle(){
+    public Boolean FindTitle(){
 
         String Title;
 
-        Title = _webDriver.getTitle();
+        try {
+             Title = _webDriver.getTitle();
 
-        System.out.println("Page title: "+Title);
+            System.out.println("Page title: "+ Title);
 
-        return Title;
+            return true;
+        }
+        catch (org.openqa.selenium.NoSuchElementException e){
+
+            System.out.println("Error finding Title");
+
+            return false;
+        }
+
     }
 
     public boolean NavigateToPage(String navigateTo){
@@ -39,8 +51,6 @@ public class HomepagePO {
 
             POHelper.WaitForElement(_webDriver, By.cssSelector(".SuperfishMegaMenu-level--1 [title~="+navigateTo+"]"));
             WebElement Page = _webDriver.findElement(By.cssSelector(".SuperfishMegaMenu-level--1 [title~="+navigateTo+"]"));
-
-            System.out.println(Page);
 
             String link = Page.getAttribute("href");
 
