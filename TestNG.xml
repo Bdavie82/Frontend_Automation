@@ -2,8 +2,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Frontend_Automation" thread-count="1">
     <parameter name="website" value="http://skiutah.com"/>
+    <parameter name="navigateTo" value="Deals"/>
     <test name="SeleniumTests">
         <parameter name="website" value="https://skiutah.com"/>
+        <parameter name="navigateTo" value="Deals"/>
         <classes>
             <class name="LogicObjects.SeleniumTests">
 

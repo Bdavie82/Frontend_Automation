@@ -9,7 +9,7 @@ import org.testng.annotations.BeforeTest;
 
 public class BaseTest {
 
-    WebDriver _webDriver;
+    protected WebDriver _webDriver;
 
     protected HomepagePO HomepagePO;
 
