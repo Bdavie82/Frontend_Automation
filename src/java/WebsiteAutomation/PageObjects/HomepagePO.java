@@ -14,6 +14,7 @@ public class HomepagePO {
     private WebDriver _webDriver;
     public String Title;
     public String link;
+    public String sublink;
     public HomepagePO(WebDriver webDriver){
         _webDriver = webDriver;
     }
@@ -43,12 +44,12 @@ public class HomepagePO {
 
     }
 
-    public boolean NavigateToPage(String navigateTo){
+    public boolean NavigateToMainPage(String navigateToPage){
 
         try{
 
-            POHelper.WaitForElement(_webDriver, By.cssSelector(".SuperfishMegaMenu-level--1 [title~="+navigateTo+"]"));
-            WebElement Page = _webDriver.findElement(By.cssSelector(".SuperfishMegaMenu-level--1 [title~="+navigateTo+"]"));
+            POHelper.WaitForElement(_webDriver, By.cssSelector(".SuperfishMegaMenu-level--1 [title~="+navigateToPage+"]"));
+            WebElement Page = _webDriver.findElement(By.cssSelector(".SuperfishMegaMenu-level--1 [title~="+navigateToPage+"]"));
 
             link = Page.getAttribute("href");
 
@@ -57,12 +58,31 @@ public class HomepagePO {
             return true;
 
         } catch (org.openqa.selenium.NoSuchElementException e){
-            System.out.println("Error finding " + navigateTo + " in navigation");
+            System.out.println("Error finding " + navigateToPage + " in navigation");
             return false;
         }
 
 
     }
+
+    /*public boolean NavigateToSubPage(String nagigateToSubPage){
+
+        try{
+
+            POHelper.WaitForElement(_webDriver, By.ByCssSelector(".SuperfishMegaMenu-subLink"));
+            WebElement SubPage = _webDriver.findElement(By.ByCssSelector(".SuperfishMegaMenu-subLink"))
+
+            sublink = SubPage.getAttribute("href")
+
+            _webDriver.get(sublink)
+
+            return true;
+        }
+        catch{
+            System.out.println("Error finding Subpages in navigation");
+            return false;
+        }
+    }*/
 
 
 }
